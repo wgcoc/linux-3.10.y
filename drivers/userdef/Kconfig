@@ -1,0 +1,18 @@
+menu "Userdef Driver"
+comment "Userdef Driver"
+config USERDEF_DRIVER
+	bool "Userdef Support"
+config USERDEF_GPIO
+	tristate "GPIO"
+	depends on USERDEF_DRIVER
+	help
+	"GPIOs of user defined"
+config USERDEF_AM2120
+	tristate "AM2120"
+	depends on USERDEF_DRIVER
+	help
+	"Temperature and humidity sensor"
+config USERDEF_DRIVER_USER
+	tristate "user-space interface"
+	depends on USERDEF_DRIVER
+endmenu
